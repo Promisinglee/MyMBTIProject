@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 类型描述器</title>
+    <style>
+        /* 这是内联 CSS 的内容 */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+    
+        header {
+            background-color: #0275d8;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+    
+        nav {
+            background: #333;
+            color: white;
+            padding: 5px;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+    
+        section {
+            margin: 15px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+        }
+    
+        aside {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin: 15px;
+        }
+    
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    
+        /* 新增和修改后的样式 */
+        .mbti-input-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+    
+        .mbti-input-container input {
+            padding: 15px; /* 增加 padding 来使得输入框更高 */
+            margin-right: 10px;
+            font-size: 1.2em; /* 增加字体大小 */
+            width: 200px; /* 设置一个最小宽度 */
+        }
+    
+        .mbti-input-container button {
+            padding: 15px 30px; /* 增加按钮的 padding 和宽度 */
+            font-size: 1.2em; /* 增加字体大小 */
+            cursor: pointer; /* 鼠标悬停时显示指针 */
+        }
+    
+        .mbti-description {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>欢迎来到我的网站</h1>
+    </header>
+
+    <nav>
+        <!-- 导航链接 -->
+    </nav>
+
+    <section>
+        <h2>请输入你的MBTI类型</h2>
+        <div class="mbti-input-container">
+            <input type="text" id="mbtiInput" placeholder="例如: INTP" />
+            <button onclick="showMBTIDescription()">确认</button>
+        </div>
+        <div id="mbtiResult">
+            <!-- MBTI 类型描述将在这里显示 -->
+        </div>
+    </section>
+
+    <aside>
+        <!-- 侧边栏内容，比如广告或链接列表 -->
+    </aside>
+
+    <footer>
+        <p>版权信息 &copy; 2024 我的网站</p >
+    </footer>
+
+    <script>
+        function showMBTIDescription() {
+            var mbtiType = document.getElementById('mbtiInput').value.toUpperCase(); // 获取用户输入并转换为大写
+            var resultText = '';
+
+            switch(mbtiType) {
+                case 'INTJ':
+                    resultText = 'INTJ型的人是天生的策划者，具有独特的思考方式和高标准。';
+                    break;
+                case 'INTP':
+                    resultText = 'INTP型的人是逻辑哲学家，独立、创新且对理论充满好奇。';
+                    break;
+                case 'ENTJ':
+                    resultText = 'ENTJ型的人天生是领导者，直接、果断，善于将计划转化为行动。';
+                    break;
+                case 'ENTP':
+                    resultText = 'ENTP型的人是聪明、好奇的思想家，无法抵挡一个挑战。';
+                    break;
+                // ...添加更多MBTI类型的描述
+                default:
+                    resultText = '未知的MBTI类型，请输入有效的MBTI类型如INTJ、ENTP等。';
+            }
+
+            document.getElementById('mbtiResult').innerText = resultText;
+        }
+    </script>
+
+</body>
+</html>
